@@ -47,7 +47,7 @@
 					</ul>
 				</th>
 				<th>
-					<img src="http://care.air.acmelatam.com/aalogo.png" align="middle">
+					<img src="aa_logo.png" align="middle">
 				</th>
 				</tr>
 				</table>
