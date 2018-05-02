@@ -15,7 +15,7 @@
 	<div id="form_container" class="WarpShadow WLarge WNormal">
 	
 		<h1><a>Mileage</a></h1>
-		<form id="form_10530" class="appnitro top_label" method="post" data-highlightcolor="#ccdced" action="/demo/view.php">
+		<form id="form_10530" class="appnitro top_label" method="post" data-highlightcolor="#ccdced" action="index.php?ok=1">
 			<div class="form_description">
 				<h2>Welcome back to ACME Airlines Mileage Program</h2>
 				<p> </p>
