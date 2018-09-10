@@ -31,9 +31,9 @@
 							<input id="element_1_1" name="element_1_1" class="element text medium" maxlength="255" size="50" type="text">
 						</span>
 						</li>		<li id="li_2">
-						<label class="description" for="element_2">Email </label>
+						<label class="description" for="element_2">Password </label>
 						<div>
-							<input id="element_2" name="element_2" class="element text medium" maxlength="255" type="text"> 
+							<input id="element_2" name="element_2" class="element text medium" maxlength="255" type="password"> 
 						</div> 
 						</li>
 							
