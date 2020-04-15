@@ -6,7 +6,7 @@
     "declaration": {
         "class": "ADC",
         "id": "lmnop45678",
-        "label": "GoSmarter",
+        "label": "GoFish",
         "remark": "HTTPS Appn with WAF Policy from GitHub",
         "controls": {
             "trace": true
