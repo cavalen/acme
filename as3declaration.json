@@ -39,7 +39,7 @@
                     ],
                     "members": [
                         {
-                            "servicePort": 8080,
+                            "servicePort": 80,
                             "serverAddresses": [
                                 "10.1.10.120"
                             ],
@@ -56,11 +56,11 @@
 					"class": "TLS_Server",
 					"certificates": [
 						{
-							"certificate": "webcert_appsec"
+							"certificate": "f5cli_cert"
 						}
 						]
 				},
-                "webcert_appsec": {
+                "f5cli_cert": {
                     "class": "Certificate",
                     "remark": "in practice we recommend using a passphrase",
                     "certificate": "-----BEGIN CERTIFICATE-----\nMIIDIjCCAgqgAwIBAgIEEZ+6iTANBgkqhkiG9w0BAQsFADBTMQswCQYDVQQGEwJV\nUzEUMBIGA1UEChMLRjUgTmV0d29ya3MxEjAQBgNVBAsTCUdvU21hcnRlcjEaMBgG\nA1UEAxMRd2ViYXBwLmY1ZGVtby5jb20wHhcNMTkwNTE2MTMzMDQ5WhcNMjEwNTE1\nMTMzMDQ5WjBTMQswCQYDVQQGEwJVUzEUMBIGA1UEChMLRjUgTmV0d29ya3MxEjAQ\nBgNVBAsTCUdvU21hcnRlcjEaMBgGA1UEAxMRd2ViYXBwLmY1ZGVtby5jb20wggEi\nMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCzZcc48eMRCrI5QIOprcAInNGH\nlBMSJACKTSGAaFBLXdzrqdkZC28zpDl7KfbplyNF1rGnkvZPbtPAD1mM39te81fe\nFpz4cfIE5V+RUiufWnmS5Q/T5I2ct7VMLFJ51DTj6MR3ahA3ePwE1OW4OzNmMEDz\noZr6u4WFlhh732Nm9vBJfxStULnqVx3Lga0J1GCW5aYMRBxXrU2+U4Tiv+6okTkR\nMgFjeVmT70GHpvVxllDjibreBlRbrh45LTLvpTLPzteXV2zT3AWohQSN8BjamF2T\nMwwSzdHEZRPry3b8yVVUgnCnDiatxtEy1uJlvBzN204FiZpWYxwDrkcRYVB7AgMB\nAAEwDQYJKoZIhvcNAQELBQADggEBABG/4P+e/Tktlqj6sZP301SWv8zHrgx5iqHO\nqQcud5ZdvepwpS2naXNK9TkarzYrmvt5MZEOg/pUhUkJaKYz1PlM4Hyt+Dpq0pAm\nLQs8bKZ6n+rr3g3QnnVUXAwjnS37cg8+WdxJuqrhtTDGqutqePhodW6rX4I4ovW/\n9CP1ffq0e1NVKPzhsXJkXSFv0uJX7nC7PdFFcwHYUnKmYZdWkIcY9SRvToayX8Sd\nWKjAczPbt56cdZIVRMOpC+GKQaVc01uiCBhD5WlVCKZxR75BD6ulKQ540WnzDxKE\nOsK93ESA8qcWZblWSuxbPObMaQfYbVzVmSfxGvsKZGktdq6geNo=\n-----END CERTIFICATE-----",
