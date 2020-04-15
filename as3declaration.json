@@ -1,0 +1,72 @@
+{
+    "$schema": "https://raw.githubusercontent.com/F5Networks/f5-appsvcs-extension/master/schema/latest/as3-schema.json",
+    "class": "AS3",
+    "action": "deploy",
+    "persist": true,
+    "declaration": {
+        "class": "ADC",
+        "id": "lmnop45678",
+        "label": "GoSmarter",
+        "remark": "HTTPS Appn with WAF Policy from GitHub",
+        "controls": {
+            "trace": true
+        },
+        "f5-cli-app": {
+            "class": "Tenant",
+            "Hackazon_app": {
+                "class": "Application",
+                "template": "https",
+                "serviceMain": {
+                    "class": "Service_HTTPS",
+                    "virtualAddresses": [
+                        "10.1.10.165"
+                    ],
+                    "pool": "appsec_pool",
+                    "securityLogProfiles": [
+                    	{
+                    		"bigip": "/Common/Log all requests"
+                    	}
+                    ],
+                    "policyWAF": {
+                    	"use": "AcmeWAF"
+                    },
+                    "serverTLS": "frontside_appsec"
+                },
+                "appsec_pool": {
+                    "class": "Pool",
+                    "monitors": [
+                        "http"
+                    ],
+                    "members": [
+                        {
+                            "servicePort": 8080,
+                            "serverAddresses": [
+                                "10.1.10.120"
+                            ],
+                            "shareNodes": true
+                        }
+                    ]
+                },
+                "AcmeWAF": {
+                	"class": "WAF_Policy",
+                	"url": "https://raw.githubusercontent.com/cavalen/aolab-azure/master/files/waf_acme.xml",
+                	"ignoreChanges": true
+                },
+				"frontside_appsec": {
+					"class": "TLS_Server",
+					"certificates": [
+						{
+							"certificate": "webcert_appsec"
+						}
+						]
+				},
+                "webcert_appsec": {
+                    "class": "Certificate",
+                    "remark": "in practice we recommend using a passphrase",
+                    "certificate": "-----BEGIN CERTIFICATE-----\nMIIDIjCCAgqgAwIBAgIEEZ+6iTANBgkqhkiG9w0BAQsFADBTMQswCQYDVQQGEwJV\nUzEUMBIGA1UEChMLRjUgTmV0d29ya3MxEjAQBgNVBAsTCUdvU21hcnRlcjEaMBgG\nA1UEAxMRd2ViYXBwLmY1ZGVtby5jb20wHhcNMTkwNTE2MTMzMDQ5WhcNMjEwNTE1\nMTMzMDQ5WjBTMQswCQYDVQQGEwJVUzEUMBIGA1UEChMLRjUgTmV0d29ya3MxEjAQ\nBgNVBAsTCUdvU21hcnRlcjEaMBgGA1UEAxMRd2ViYXBwLmY1ZGVtby5jb20wggEi\nMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCzZcc48eMRCrI5QIOprcAInNGH\nlBMSJACKTSGAaFBLXdzrqdkZC28zpDl7KfbplyNF1rGnkvZPbtPAD1mM39te81fe\nFpz4cfIE5V+RUiufWnmS5Q/T5I2ct7VMLFJ51DTj6MR3ahA3ePwE1OW4OzNmMEDz\noZr6u4WFlhh732Nm9vBJfxStULnqVx3Lga0J1GCW5aYMRBxXrU2+U4Tiv+6okTkR\nMgFjeVmT70GHpvVxllDjibreBlRbrh45LTLvpTLPzteXV2zT3AWohQSN8BjamF2T\nMwwSzdHEZRPry3b8yVVUgnCnDiatxtEy1uJlvBzN204FiZpWYxwDrkcRYVB7AgMB\nAAEwDQYJKoZIhvcNAQELBQADggEBABG/4P+e/Tktlqj6sZP301SWv8zHrgx5iqHO\nqQcud5ZdvepwpS2naXNK9TkarzYrmvt5MZEOg/pUhUkJaKYz1PlM4Hyt+Dpq0pAm\nLQs8bKZ6n+rr3g3QnnVUXAwjnS37cg8+WdxJuqrhtTDGqutqePhodW6rX4I4ovW/\n9CP1ffq0e1NVKPzhsXJkXSFv0uJX7nC7PdFFcwHYUnKmYZdWkIcY9SRvToayX8Sd\nWKjAczPbt56cdZIVRMOpC+GKQaVc01uiCBhD5WlVCKZxR75BD6ulKQ540WnzDxKE\nOsK93ESA8qcWZblWSuxbPObMaQfYbVzVmSfxGvsKZGktdq6geNo=\n-----END CERTIFICATE-----",
+                    "privateKey": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCzZcc48eMRCrI5\nQIOprcAInNGHlBMSJACKTSGAaFBLXdzrqdkZC28zpDl7KfbplyNF1rGnkvZPbtPA\nD1mM39te81feFpz4cfIE5V+RUiufWnmS5Q/T5I2ct7VMLFJ51DTj6MR3ahA3ePwE\n1OW4OzNmMEDzoZr6u4WFlhh732Nm9vBJfxStULnqVx3Lga0J1GCW5aYMRBxXrU2+\nU4Tiv+6okTkRMgFjeVmT70GHpvVxllDjibreBlRbrh45LTLvpTLPzteXV2zT3AWo\nhQSN8BjamF2TMwwSzdHEZRPry3b8yVVUgnCnDiatxtEy1uJlvBzN204FiZpWYxwD\nrkcRYVB7AgMBAAECggEAEYBQ3q/OWJfECkzOa2u9a7mswT7DW4YynUtoBMhoaOnX\nxw/TU5undhDD4M2XvnMVqFcJDtGKAPbNZpO4x0MBejJgNJTdLGmlVC/yUlGDWvDv\nIlMBZ8kIvay4XZ2HUEZRAJjxLbslqNu/LlN8s6vm2EXF2F7AKUzI+l7Jta/12RH8\n0SYLzZ8ccfFiOeVxT3HvV0QcaawGh34pfcOi3U+kaMZVZefnGFis1tKYWZb2ZV5c\nPpW3U3PDPjeCxIO9jgRZbOhBkhCQWa1oKsibx1U1dYPSfqq/UtRKf8gKv6u+BkLC\nVdFqWoC+S4/Wk7OPkdWfd28YZwF+kDhyQREchR2AmQKBgQD558pXfuh/Zpwx0H+D\nifHTGmZFxcvjkbWQ0jEtBtNeQLOGgR8t3pQ7XQADcUAUBQ2lGR5sbP6lEgsMP35B\nY3w7nybFkWNEtEEUqCLKoGm1O0HiSh4v2W4WBxt9ynJ4vASzNRh04dG8aVHyG8uI\n30W2J0m0dRb1ZasKt+6Lguy3iQKBgQC3xcsLJ10I14rJQQhmcilF59QYT5TSoPuF\nv9L1GdOhRCPXgr97R4/YEDzk/VgLyzMjwTYdr24Kdggsa9Gn8UQ8T1xGOTNN5GUS\nqwammb2IkixWoPDnc9QokSk2XU8TRjPIR0OynpKmmLJeTDFbgu5kC7WAvCgGl0SN\nHwJG2U+C4wKBgQCAvbptrMFVsKTSvNiUCSJ9YGJDm4xX5h6lRsNysMt/CNHzft1z\nIfE3S8fP/i3GonvPC8uyi8v7efobCzKduQStKmYs7aM4J6xHWf7iaBVM+gQM8aXv\nfJHL40l0WjDypdm+AKJixFrqN0+x7EPEdVFSb5b20kNLlF6zHOJVGNOeEQKBgAMI\ntvN2MOkGdfogorzeQaQv0aadGb3ofn6UzizRwla1Q0o5lGO6qLtOeVLmg9+d+Tgr\n5nLTBKQTksr49LsrFo9QWBuosholHS4TuMZjX2ez0huUCKYpmWUaEG4fWEDfNdem\npY17ZLxvZPJ9m4sBPGJWdyaq9JY3RSB3VJhK2i81AoGBANwVq/2H0fo+JjlheEtb\nWwg6HrPUtBWzOXV5qHyhbbFrA2jPQnN82Lty7UsjTTw2SDYic63OVZs6KL6AKnLW\nFl1X6LEURQKI3KikgMtve39Xqpr/pz8ueMVGxRQ5FscpFyTfu7X9jy5aeVHwORr1\nWzqlRmkCz4qghC1wiZYz/sk5\n-----END PRIVATE KEY-----"
+                }
+            }
+        }
+    }
+}
