@@ -5,6 +5,7 @@
     "persist": true,
     "declaration": {
         "class": "ADC",
+	"schemaVersion": "3.10.0",
         "id": "lmnop45678",
         "label": "GoFish",
         "remark": "HTTPS Appn with WAF Policy from GitHub",
