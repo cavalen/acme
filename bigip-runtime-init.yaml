@@ -1,0 +1,7 @@
+default: 
+  description: Installs packages from metadata using latest versions
+  extension_packages:
+    install_operations:
+      - extensionType: do
+      - extensionType: as3
+      - extensionType: ts
