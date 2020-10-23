@@ -126,6 +126,21 @@
         "userNameSource": "all-login-pages",
         "enableTrackingSessionHijackingByDeviceId": true
       }
-    }
+    },
+    "brute-force-attack-preventions": [
+      {
+        "bruteForceProtectionForAllLoginPages": true,
+        "loginAttemptsFromTheSameUser": {
+          "enabled": true,
+          "action": "alarm-and-captcha",
+          "threshold": 5
+        },
+        "loginAttemptsFromTheSameDeviceId": {
+          "enabled": true,
+          "action": "alarm-and-captcha",
+          "threshold": 5
+        }
+      }
+    ]
   }
 }
