@@ -97,10 +97,10 @@
           "protocol": "https",
           "method": "*",
           "type": "explicit",
-          "performStaging": false,
+          "performStaging": false
         },
-        "authenticationType": "http-basic",
-        "usernameParameterName": "username",
+        "authenticationType": "form",
+        "usernameParameterName": "",
         "passwordParameterName": "password",
         "accessValidation": {
           "headerContains": "Location: /account",
