@@ -143,7 +143,6 @@
         "loginAttemptsFromTheSameIp": { "enabled": false },
         "clientSideIntegrityBypassCriteria": { "enabled": false },
         "captchaBypassCriteria": { "enabled": false }
-        }
       }
     ]
   }
