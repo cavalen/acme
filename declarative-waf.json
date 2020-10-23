@@ -1,4 +1,5 @@
 {
+  "$schema": "https://raw.githubusercontent.com/f5devcentral/f5-asm-policy-templates/v1.1/declerative%20policy%20schema/schema_v16_0.json",
   "policy": {
     "name": "vLabWAF-hackazon",
     "description": "DECLARATIVE Policy AND WEBHOOKS",
@@ -95,7 +96,21 @@
         "name": "/user/login",
         "method": "*",
         "type": "explicit",
-        "performStaging": "false"
+        "performStaging": false
+      }
+    ],
+    "login-pages": [
+      {
+        "url": { 
+          "name": "/user/login",
+          "protocol": "https",
+          "method": "*",
+          "type": "explicit",
+          "performStaging": false
+        },
+        "authenticationType": "http-basic",
+        "usernameParameterName": "username",
+        "passwordParameterName": "password"
       }
     ]
   }
