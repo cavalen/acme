@@ -93,7 +93,7 @@
     "urls": [
       {
         "protocol": "https",
-        "name": "/contact",
+        "name": "/user/login",
         "method": "*",
         "type": "explicit",
         "performStaging": false,
@@ -103,12 +103,7 @@
     "login-pages": [
       {
         "url": { 
-          "protocol": "https",
-          "name": "/user/login",
-          "method": "*",
-          "type": "explicit",
-          "performStaging": false,
-          "isAllowed": true
+          "name": "/user/login"
         },
         "authenticationType": "form",
         "usernameParameterName": "username",
