@@ -53,18 +53,18 @@
       "lastCcnDigitsToExpose": 4
     },
     "response-pages": [
-     {
-       "responseContent": "<html><head><title>Request Rejected</title></head><body><h1>Su solicitud fue rechazada, <b>Hacker!!!</b> &#9760;&#65039;<br><br>Your support ID is: <%TS.request.ID()%><br><br></h1><a href='javascript:history.back();'>[Go Back]</a></body></html>",
-       "responseHeader": "HTTP /1.1 200 OK\\r\\nCache-Control: no-cache\\r\\nConnection: close",
-       "responseActionType": "custom",
-       "responsePageType": "default"
-     },
-     {
-       "responseContent": "Custom Blocking Page",
-       "responseHeader": "HTTP /1.1 302 OK\\r\\nConnection: close",
-       "responseActionType": "custom",
-       "responsePageType": "failed-login-honeypot"
-     }
+      {
+        "responseContent": "<html><head><title>Request Rejected</title></head><body><h1>Su solicitud fue rechazada, <b>Hacker!!!</b> &#9760;&#65039;<br><br>Your support ID is: <%TS.request.ID()%><br><br></h1><a href='javascript:history.back();'>[Go Back]</a></body></html>",
+        "responseHeader": "HTTP /1.1 200 OK\\r\\nCache-Control: no-cache\\r\\nConnection: close",
+        "responseActionType": "custom",
+        "responsePageType": "default"
+      },
+      {
+        "responseContent": "Custom Blocking Page",
+        "responseHeader": "HTTP /1.1 302 OK\\r\\nConnection: close",
+        "responseActionType": "custom",
+        "responsePageType": "failed-login-honeypot"
+      }
     ],
     "webhooks": [
       {
@@ -80,6 +80,15 @@
         "triggerEvent": "http-request-illegal",
         "url": "https://webhook.site/0c83a9a9-a02e-496e-9a08-8f5f7a478a32",
         "name": "vLab_webhook_event"
+      }
+    ],
+    "urls": [
+      {
+        "protocol": "https",
+        "name": "/user/login",
+        "method": "*",
+        "type": "explicit",
+        "performStaging": "false"
       }
     ]
   }
