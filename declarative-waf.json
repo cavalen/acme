@@ -90,15 +90,6 @@
         "name": "vLab_webhook_event"
       }
     ],
-    "urls": [
-      {
-        "protocol": "https",
-        "name": "/user/login",
-        "method": "*",
-        "type": "explicit",
-        "performStaging": false
-      }
-    ],
     "login-pages": [
       {
         "url": { 
@@ -106,11 +97,16 @@
           "protocol": "https",
           "method": "*",
           "type": "explicit",
-          "performStaging": false
+          "performStaging": false,
         },
         "authenticationType": "http-basic",
         "usernameParameterName": "username",
-        "passwordParameterName": "password"
+        "passwordParameterName": "password",
+        "accessValidation": {
+          "headerContains": "Location: /account",
+          "responseHttpStatus": "302",
+          "responseOmits": "Username or password are incorrect"
+        }
       }
     ]
   }
