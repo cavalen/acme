@@ -103,7 +103,12 @@
     "login-pages": [
       {
         "url": { 
-          "name": "/user/login"
+          "protocol": "https",
+          "name": "/user/login",
+          "method": "*",
+          "type": "explicit",
+          "performStaging": false,
+          "isAllowed": true
         },
         "authenticationType": "form",
         "usernameParameterName": "username",
