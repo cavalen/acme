@@ -139,6 +139,10 @@
           "enabled": true,
           "action": "alarm-and-captcha",
           "threshold": 5
+        },
+        "loginAttemptsFromTheSameIp": { "enabled": false },
+        "clientSideIntegrityBypassCriteria": { "enabled": false },
+        "captchaBypassCriteria": { "enabled": false }
         }
       }
     ]
