@@ -97,7 +97,7 @@
         "method": "*",
         "type": "explicit",
         "performStaging": false,
-        "isAllowed": true,        
+        "isAllowed": true
       }
     ],
     "login-pages": [
