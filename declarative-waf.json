@@ -106,10 +106,11 @@
           "name": "/user/login",
           "method": "*",
           "type": "explicit",
-          "performStaging": false
+          "performStaging": false,
+          "isAllowed": true
         },
         "authenticationType": "form",
-        "usernameParameterName": "",
+        "usernameParameterName": "username",
         "passwordParameterName": "password",
         "accessValidation": {
           "headerContains": "Location: /account",
