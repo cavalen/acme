@@ -36,7 +36,14 @@
           "alarm": true,
           "block": true,
           "learn": true
-        }        
+        },
+        {
+          "alarm": true,
+          "block": false,
+          "description": "Dataguard only alarm and learn",
+          "learn": true,
+          "name": "VIOL_DATA_GUARD"
+        }
       ]
     },
     "signature-settings": {
