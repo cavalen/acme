@@ -90,11 +90,20 @@
         "name": "vLab_webhook_event"
       }
     ],
+    "urls": [
+      {
+        "protocol": "https",
+        "name": "/user/login",
+        "method": "*",
+        "type": "explicit",
+        "performStaging": false
+      }
+    ],
     "login-pages": [
       {
         "url": { 
-          "name": "/user/login",
           "protocol": "https",
+          "name": "/user/login",
           "method": "*",
           "type": "explicit",
           "performStaging": false
