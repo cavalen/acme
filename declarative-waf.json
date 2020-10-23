@@ -93,10 +93,11 @@
     "urls": [
       {
         "protocol": "https",
-        "name": "/user/login",
+        "name": "/contact",
         "method": "*",
         "type": "explicit",
-        "performStaging": false
+        "performStaging": false,
+        "isAllowed": true,        
       }
     ],
     "login-pages": [
@@ -118,6 +119,13 @@
           "responseOmits": "Username or password are incorrect"
         }
       }
-    ]
+    ],
+    "session-tracking": {
+      "sessionTrackingConfiguration": {
+        "enableSessionAwareness": true,
+        "userNameSource": "all-login-pages",
+        "enableTrackingSessionHijackingByDeviceId": true
+      }
+    }
   }
 }
