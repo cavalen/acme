@@ -5,3 +5,11 @@ default:
       - extensionType: do
       - extensionType: as3
       - extensionType: ts
+  #extension_services:
+  #service_operations:
+  #  - extensionType: do
+  #    type: url
+  #    value: https://cdn.f5.com/product/cloudsolutions/declarations/do.json
+  #  - extensionType: as3
+  #    type: url
+  #    value: https://cdn.f5.com/product/cloudsolutions/declarations/as3.json
