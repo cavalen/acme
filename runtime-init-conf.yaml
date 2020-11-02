@@ -9,9 +9,10 @@ extension_packages:
           extensionVersion: 1.15.0
 extension_services:
     service_operations:
-    - extensionType: as3
-      type: url
-      value: https://raw.githubusercontent.com/cavalen/acme/master/as3.json
     - extensionType: do
       type: url
       value: https://raw.githubusercontent.com/cavalen/acme/master/do.json
+    - extensionType: as3
+      type: url
+      value: https://raw.githubusercontent.com/cavalen/acme/master/as3.json
+
