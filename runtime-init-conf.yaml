@@ -1,13 +1,17 @@
+runtime_parameters: []
 extension_packages:
-  install_operations:
-    - extensionType: do
+    install_operations:
+        - extensionType: do
+          extensionVersion: 1.16.0
+        - extensionType: as3
+          extensionVersion: 3.23.0
+        - extensionType: ts
+          extensionVersion: 1.15.0
+extension_services:
+    service_operations:
     - extensionType: as3
-    - extensionType: ts
-#extension_services:
-#  service_operations:
-#    - extensionType: do
-#      type: url
-#      value: https://cdn.f5.com/product/cloudsolutions/declarations/do.json
-#    - extensionType: as3
-#      type: url
-#      value: https://cdn.f5.com/product/cloudsolutions/declarations/as3.json
+      type: url
+      value: https://raw.githubusercontent.com/cavalen/acme/master/as3.json
+    - extensionType: do
+      type: url
+      value: https://raw.githubusercontent.com/cavalen/acme/master/do.json
