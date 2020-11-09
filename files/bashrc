@@ -159,4 +159,13 @@ if [[ $TERM != linux && ! $PROMPT_COMMAND =~ _update_ps1 ]]; then
     PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 fi
 
+TIEMPO_INICIO() {
+   tiempoinicio=$(date +%s)
+   echo $tiempoinicio
+   }
+
+TIEMPO_FIN() {
+   echo "Tiempo total: $(date -ud "@$(($(date +%s) - $tiempoinicio))" +%T) (HH:MM:SS)"
+}
+
 neofetch
