@@ -91,10 +91,12 @@ fi
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
-#alias l='ls -la'
-alias l='ls -la --color=auto --human-readable --time-style=long-iso --group-directories-first "$@"'
+#alias l='ls -la --color=auto --human-readable --time-style=long-iso --group-directories-first "$@"'
+alias l='exa -al --color=always --group-directories-first --time-style=long-iso'
 alias pip='pip3'
 alias python='python3'
+alias cp="cp -i"
+alias mv='mv -i'
 alias rm='rm -i'
 alias cat='batcat --pager=never'
 alias less='batcat --pager=less'
