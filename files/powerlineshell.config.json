@@ -1,0 +1,17 @@
+{
+  "segments": [
+    "virtual_env",
+    "username",
+    "hostname",
+    "ssh",
+    "git",
+    "cwd",
+    "hg",
+    "jobs",
+    "root"
+  ],
+  "cwd": {
+    "max_depth": 5
+  },
+  "theme": "default"
+}
