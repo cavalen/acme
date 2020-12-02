@@ -98,12 +98,13 @@ alias python='python3'
 alias cp="cp -i"
 alias mv='mv -i'
 alias rm='rm -i'
-alias cat='batcat --pager=never'
+alias cat='batcat -pp'
 alias less='batcat --pager=less'
+alias more='batcat --pager=less'
 alias ap='ansible-playbook'
 alias tf='terraform'
 alias tfa='TIEMPO_INICIO; terraform apply -auto-approve; TIEMPO_FIN'
-alias git_update='git pull && git add . && git status && git commit -m "Cambios ..." && git push
+alias git_update='git pull && git add . && git status && git commit -m "Cambios ..." && git push'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
