@@ -70,7 +70,8 @@
                 "name": "Manjaro",
                 "source": "Windows.Terminal.Wsl",
                 "startingDirectory": "\\\\wsl$\\Manjaro\\home\\carlos",
-                "tabTitle": "Manjaro Linux"
+                "tabTitle": "Manjaro Linux",
+                "suppressApplicationTitle": true
             }
         ]
     },
