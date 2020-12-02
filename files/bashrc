@@ -172,3 +172,4 @@ TIEMPO_FIN() {
 }
 
 neofetch
+#/opt/shell-color-scripts/colorscript.sh -r
