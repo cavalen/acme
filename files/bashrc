@@ -105,6 +105,12 @@ alias ap='ansible-playbook'
 alias tf='terraform'
 alias tfa='TIEMPO_INICIO; echo "terraform apply"; terraform apply -auto-approve; TIEMPO_FIN'
 alias git_update='git pull && git add . && git status && git commit -m "Cambios ..." && git push'
+alias pac_ins='sudo pacman -Sy'
+alias pac_rem='sudo pacman -Ry'
+alias pac_sea='sudo pacman -Ss'
+alias pac_upd='sudo pacman -Syu && yay -Syu'
+alias yay_ins='yay -Sy'
+alias apt_upd='sudo apt update && sudo apt upgrade'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
