@@ -95,7 +95,7 @@ alias df='df -h'                          # human-readable sizes
 alias free='free -m'                      # show sizes in MB
 alias np='nano -w PKGBUILD'
 alias more=less
-#alias l='ls -la --color=auto --human-readable --time-style=long-iso --group-directories-first "$@"'
+alias ll='ls -la --color=auto --human-readable --time-style=long-iso --group-directories-first "$@"'
 alias l='exa -al --color=always --group-directories-first --time-style=long-iso'
 alias pip='pip3'
 alias python='python3'
@@ -155,15 +155,17 @@ ex ()
     echo "'$1' is not a valid file"
   fi
 }
+PATH=$PATH:/$HOME/.local/bin
 
-source /home/carlos/.config/broot/launcher/bash/br
-
+eval `ssh-agent -s` >/dev/null 2>&1
+ssh-add /home/carlos/.ssh/id_ed25519_github >/dev/null 2>&1
 export ANSIBLE_NOCOWS=1
 export HISTCONTROL=ignoreboth
 
 #export PS1="\[\033[38;5;11m\]\u\[$(tput sgr0)\]\[\033[38;5;15m\]@\h:\[$(tput sgr0)\]\[\033[38;5;6m\][\w]:\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
 LS_COLORS=$LS_COLORS:'di=01;34:ow=01;34:' ; export LS_COLORS
-EMOJIS=(💻 💩 🌵 🔥 😎 🍺 🍷 ⚽ 💀 ☠️ 👽 ☕️ )
+
+EMOJIS=(💻 💩 🌵 🔥 😎 🍺 🍷 ⚽ 💀 ☠️ 👽️  🌎 ☁️   )
 RANDOM_EMOJI() {
   SELECTED_EMOJI=${EMOJIS[$RANDOM % ${#EMOJIS[@]}]};
     echo $SELECTED_EMOJI;
@@ -178,8 +180,10 @@ function _update_ps1() {
     #PS1=🍺(powerline-shell $?)
     #PS1=💀powerline-shell $?)
     #PS1=💩powerline-shell $?)
-    #PS1=☠️powerline-shell $?)
+    #PS1=🔥powerline-shell $?)
+    #PS1=☁️powerline-shell $?)
     #PS1=👽️powerline-shell $?)
+    #PS1=🌎powerline-shell $?)
 }
 if [[ $TERM != linux && ! $PROMPT_COMMAND =~ _update_ps1 ]]; then
     PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
