@@ -29,11 +29,13 @@
     "profiles": {
         "defaults": {
             // Put settings here that you want to apply to all profiles.
-            //"fontFace":"Cascadia Mono PL",
-            //"fontFace":"Ubuntu Mono derivative Powerline",
-            "fontFace": "UbuntuMono Nerd Font Mono",
-            //"fontFace":"Monaco for Powerline",
-            "fontSize": 14,
+            //"fontFace":"Cascadia Mono PL", "fontSize": 12,
+            //"fontFace":"Ubuntu Mono derivative Powerline", "fontSize": 13,
+            //"fontFace": "UbuntuMono Nerd Font Mono", "fontSize": 13,
+            "fontFace": "Mononoki NF", "fontSize": 12,
+            //"fontFace": "Hack NF", "fontSize": 11,
+            //"fontFace":"Monaco for Powerline", "fontSize": 11,
+            //"fontSize": 12,
             "backgroundImage": "C:\\Users\\Carlos\\Downloads\\ps4.jpg",
             "backgroundImageOpacity": 0.3
         },
