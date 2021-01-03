@@ -32,11 +32,9 @@
             //"fontFace":"Cascadia Mono PL", "fontSize": 12,
             //"fontFace":"Ubuntu Mono derivative Powerline", "fontSize": 13,
             //"fontFace": "UbuntuMono Nerd Font Mono", "fontSize": 13,
-            "fontFace": "Mononoki NF",
-            "fontSize": 12,
+            "fontFace": "Mononoki NF", "fontSize": 12,
             //"fontFace": "Hack NF", "fontSize": 11,
-            //"fontFace":"Monaco for Powerline", "fontSize": 11,
-            //"fontSize": 12,
+            //"fontFace":"Monaco for Powerline", "fontSize": 11,            
             "backgroundImage": "C:\\Users\\Carlos\\Downloads\\ps4.jpg",
             "backgroundImageOpacity": 0.3
         },
@@ -45,6 +43,8 @@
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
                 "name": "Windows PowerShell",
                 "commandline": "powershell.exe",
+                "fontFace": "Cascadia Code PL",
+                "experimental.retroTerminalEffect": false,
                 "hidden": false
             },
             {
@@ -52,8 +52,9 @@
                 "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
                 "name": "Command Prompt",
                 "commandline": "cmd.exe",
+                "fontFace": "Cascadia Code PL",
+                "experimental.retroTerminalEffect": true,
                 "hidden": false,
-                "experimental.retroTerminalEffect": true
             },
             {
                 "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
@@ -67,7 +68,8 @@
                 "name": "Ubuntu-20.04",
                 "source": "Windows.Terminal.Wsl",
                 "startingDirectory": "\\\\wsl$\\Ubuntu-20.04\\home\\carlos",
-                "experimental.retroTerminalEffect": false
+                "experimental.retroTerminalEffect": false,
+                "colorScheme": "Hurtado"
             },
             {
                 "guid": "{15b79c30-8a4a-5639-b4fc-66e8442c8bb6}",
