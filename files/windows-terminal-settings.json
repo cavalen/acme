@@ -32,7 +32,8 @@
             //"fontFace":"Cascadia Mono PL", "fontSize": 12,
             //"fontFace":"Ubuntu Mono derivative Powerline", "fontSize": 13,
             //"fontFace": "UbuntuMono Nerd Font Mono", "fontSize": 13,
-            "fontFace": "Mononoki NF", "fontSize": 12,
+            "fontFace": "Mononoki NF",
+            "fontSize": 12,
             //"fontFace": "Hack NF", "fontSize": 11,
             //"fontFace":"Monaco for Powerline", "fontSize": 11,            
             "backgroundImage": "C:\\Users\\Carlos\\Downloads\\ps4.jpg",
@@ -54,7 +55,7 @@
                 "commandline": "cmd.exe",
                 "fontFace": "Cascadia Code PL",
                 "experimental.retroTerminalEffect": true,
-                "hidden": false,
+                "hidden": false
             },
             {
                 "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
@@ -69,7 +70,8 @@
                 "source": "Windows.Terminal.Wsl",
                 "startingDirectory": "\\\\wsl$\\Ubuntu-20.04\\home\\carlos",
                 "experimental.retroTerminalEffect": false,
-                "colorScheme": "Hurtado"
+                "colorScheme": "Hurtado",
+                "closeOnExit": "always"
             },
             {
                 "guid": "{15b79c30-8a4a-5639-b4fc-66e8442c8bb6}",
@@ -87,8 +89,8 @@
                 //"colorScheme": "Monokai Remastered",
                 //"colorScheme": "TokyoNight",
                 //"colorScheme": "UltraViolent",
-
-                "experimental.retroTerminalEffect": false
+                "experimental.retroTerminalEffect": false,
+                "closeOnExit": "always"
             }
         ]
     },
