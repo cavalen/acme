@@ -26,4 +26,4 @@ extension_services:
       value: https://raw.githubusercontent.com/cavalen/vlab-azure-tf/master/files/do.json
     - extensionType: as3
       type: url
-      value: https://raw.githubusercontent.com/cavalen/vlab-azure-tf/master/files/as3.json
+      value: https://raw.githubusercontent.com/cavalen/acme/master/as3-curso.json
