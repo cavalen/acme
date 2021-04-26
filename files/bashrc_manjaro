@@ -111,7 +111,7 @@ alias git_update='git pull && git add . && git status && git commit -m "Cambios 
 alias pac_ins='sudo pacman -Sy'
 alias pac_rem='sudo pacman -Ry'
 alias pac_sea='sudo pacman -Ss'
-alias upd='sudo pacman -Syu && yay -Syu && sudo pacman -Sc && yay -Sc --aur'
+alias upd='sudo pacman -Syu && yay -Syu && sudo pacman -Sc && yay -Sc --aur && paru -Sc --aur'
 alias yay_ins='yay -Sy'
 
 xhost +local:root > /dev/null 2>&1
