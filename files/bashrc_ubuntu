@@ -115,6 +115,7 @@ alias pac_sea='sudo pacman -Ss'
 alias pac_upd='sudo pacman -Syu && yay -Syu'
 alias yay_ins='yay -Sy'
 alias upd='sudo apt update && sudo apt upgrade'
+alias tb="nc termbin.com 9999"
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
