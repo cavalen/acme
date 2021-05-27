@@ -113,6 +113,7 @@ alias pac_rem='sudo pacman -Ry'
 alias pac_sea='sudo pacman -Ss'
 alias upd='sudo pacman -Syu && yay -Syu && sudo pacman -Sc && yay -Sc --aur && paru -Sc --aur'
 alias yay_ins='yay -Sy'
+alias tb="nc termbin.com 9999"
 
 xhost +local:root > /dev/null 2>&1
 
