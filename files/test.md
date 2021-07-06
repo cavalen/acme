@@ -295,3 +295,4 @@ You have two options to instruct NSM on how to retrieve images:
 	$ kubectl get pods -n bookinfo
 
 *You'll see the sidecar-attached pods terminating and new sidecar-less pods coming up.*
+
