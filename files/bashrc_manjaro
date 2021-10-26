@@ -111,7 +111,7 @@ alias git_update='git pull && git add . && git status && git commit -m "Cambios 
 alias pac_ins='sudo pacman -Sy'
 alias pac_rem='sudo pacman -Ry'
 alias pac_sea='sudo pacman -Ss'
-alias upd='sudo pacman -Syu && yay -Syu && sudo pacman -Sc && yay -Sc --aur && paru -Sc --aur'
+alias upd='sudo pacman -Syu && yay -Syu && sudo pacman -Sc --noconfirm && yay -Sc --aur --noconfirm && paru -Sc --aur --noconfirm && sudo rm -f /var/cache/pacman/pkg/*'
 alias yay_ins='yay -Sy'
 alias tb="nc termbin.com 9999"
 
