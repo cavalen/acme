@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html>
-<xmp theme="simplex" style="display:none;">
+
 # NGINX Service Mesh: Lesson 1
 
 ## System setup
@@ -250,9 +248,3 @@ The below is a quick walkthrough on using the local registry. It is not required
 	$ kubectl get pods -n bookinfo
 
 *You'll see the sidecar-attached pods terminating and new sidecar-less pods coming up.*
-
-</xmp>
-
-<script src="http://strapdownjs.com/v/0.2/strapdown.js"></script>
-</html>
-
