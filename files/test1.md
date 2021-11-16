@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html>
+<xmp theme="simplex" style="display:none;">
 # NGINX Service Mesh: Lesson 1
 
 ## System setup
@@ -36,43 +39,17 @@ The below is a quick walkthrough on using the local registry. It is not required
 ## Deploy NSM
 
 ### Set it up
+*The install method outlined here pulls NSM images directly from docker-registry.nginx.com/nsm. For additional options, including manually downloading the images, tagging them, and pushing them into a private registry for air-gap installation (either registry:5000 locally or to a cloud-based container registry such as gcr) please see https://docs.nginx.com for full NSM installation details. 
 
-	$ export ver=1.1.0
+### Download `nginx-meshctl_linux.gz` from either downloads.f5.com or MyF5
+
+	$ export ver=<CURRENT NSM VERSION>
 	$ gzip -dc nginx-meshctl_linux.gz > nginx-meshctl && chmod 755 nginx-meshctl
-	$ tar zxvf nginx-mesh-images-$ver.tar.gz
-
-### Load images into local repo:
-*NOTE: docker load/tag/push is captured here for testing and documentation purposes. These steps are not needed when using F5's container registry to deploy NSM (see Deploy The Mesh below for details).
-
-	$ docker load < nginx-mesh-images-$ver/nginx-mesh-api-$ver.tar.gz && \
-	  docker load < nginx-mesh-images-$ver/nginx-mesh-metrics-$ver.tar.gz && \
-	  docker load < nginx-mesh-images-$ver/nginx-mesh-sidecar-$ver.tar.gz && \
-	  docker load < nginx-mesh-images-$ver/nginx-mesh-init-$ver.tar.gz
-
-### Re-tag to load into registry:5000
-
-	$ docker tag nginx-mesh-sidecar:$ver registry:5000/nginx-mesh-sidecar:$ver && \
-	  docker tag nginx-mesh-init:$ver registry:5000/nginx-mesh-init:$ver && \
-	  docker tag nginx-mesh-metrics:$ver registry:5000/nginx-mesh-metrics:$ver && \
-	  docker tag nginx-mesh-api:$ver registry:5000/nginx-mesh-api:$ver
-
-### Push newly tagged containers into registry:5000
-
-	$ docker push registry:5000/nginx-mesh-api:$ver && \
-	  docker push registry:5000/nginx-mesh-metrics:$ver && \
-	  docker push registry:5000/nginx-mesh-init:$ver && \
-	  docker push registry:5000/nginx-mesh-sidecar:$ver
-
-### Verify all images are avail and ready for the mesh
-
-	$ docker image ls | grep "registry:5000/nginx-mesh"
 
 ## Deploy the mesh. 
 *This walkthrough will disable auto-injection cluster-wide and enable the `bookinfo` namespace for auto-inect only. We will look at how to change this behavior after NSM is deployed later in the lesson.*
 
-You have two options to instruct NSM on how to retrieve images: 
-
-*To pull from F5's public container registry*
+### Pull from F5's public container registry*
 
 	$ ./nginx-meshctl deploy \
 	  --disable-auto-inject \
@@ -81,28 +58,6 @@ You have two options to instruct NSM on how to retrieve images:
 	  --mtls-trust-domain nginx.mesh \
 	  --registry-server docker-registry.nginx.com/nsm \
 	  --image-tag $ver
-
-*Point NSM installer to your registry and assign a tag (please see docs for details about authenticating to a private registry, if needed)*
-
-	$ ./nginx-meshctl deploy \
-	  --disable-auto-inject \
-	  --enabled-namespaces bookinfo \
-	  --mtls-mode strict \
-	  --mtls-trust-domain nginx.mesh \
-	  --registry-server registry:5000 \
-	  --image-tag $ver
-
-*Manually call out each image by name and tag*
-
-	$ ./nginx-meshctl deploy \
-	  --disable-auto-inject \
-	  --enabled-namespaces bookinfo \
-	  --mtls-mode strict \
-	  --mtls-trust-domain nginx.mesh \
-	  --nginx-mesh-api-image "registry:5000/nginx-mesh-api:$ver" \
-	  --nginx-mesh-sidecar-image "registry:5000/nginx-mesh-sidecar:$ver" \
-	  --nginx-mesh-init-image "registry:5000/nginx-mesh-init:$ver" \
-	  --nginx-mesh-metrics-image "registry:5000/nginx-mesh-metrics:$ver"
 
 ### Check that install was successful and auto-injection is disabled for the entire cluster by default but enabled for `bookinfo`
 
@@ -295,4 +250,9 @@ You have two options to instruct NSM on how to retrieve images:
 	$ kubectl get pods -n bookinfo
 
 *You'll see the sidecar-attached pods terminating and new sidecar-less pods coming up.*
+
+</xmp>
+
+<script src="http://strapdownjs.com/v/0.2/strapdown.js"></script>
+</html>
 
