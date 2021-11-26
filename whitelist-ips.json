@@ -1,0 +1,25 @@
+[
+    {
+        "blockRequests": "never",
+        "neverLogRequests": false,
+        "ipAddress": "1.1.1.1",
+        "ipMask": "255.255.255.255"
+    },
+    {
+        "blockRequests": "always",
+        "ipAddress": "2.2.2.2",
+        "ipMask": "255.255.255.255"
+    },
+    {
+        "blockRequests": "never",
+        "neverLogRequests": false,
+        "ipAddress": "3.3.3.0",
+        "ipMask": "255.255.255.0"
+    },
+    {
+        "blockRequests": "always",
+        "neverLogRequests": false,
+        "ipAddress": "181.51.157.56",
+        "ipMask": "255.255.255.255"
+    }
+]
