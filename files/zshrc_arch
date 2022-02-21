@@ -141,8 +141,8 @@ alias mv='mv -i'
 alias df='df -h'                          # human-readable sizes
 alias free='free -m'                      # show sizes in MB
 alias more=less
-alias ll='ls -la --color=auto --human-readable --time-style=long-iso --group-directories-first "$@"'
-alias l='exa -al --color=always --group-directories-first --time-style=long-iso'
+alias ll='ls -la --color=auto --human-readable --time-style=long-iso --group-directories-first "$@" --icons'
+alias l='exa -al --color=always --group-directories-first --time-style=long-iso --icons'
 #alias pip='pip3'
 #alias python='python3'
 alias cat='bat -pp'
