@@ -20,7 +20,7 @@ cd /home/ubuntu/
 git clone https://github.com/f5devcentral/f5-waf-elk-dashboards
 cd f5-waf-elk-dashboards
 sudo docker-compose -f docker-compose.yaml up -d
-sleep 60
+sleep 120
 
 KIBANA_URL=http://127.0.0.1:5601
 jq -s . kibana/overview-dashboard.ndjson | jq '{"objects": . }' | \
