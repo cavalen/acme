@@ -1,9 +1,10 @@
 #!/bin/bash
 
 # Customization
-echo 'IP=$(ip addr show dev eth0 | grep -oP "(?<=inet ).*(?=/)")' >>~/.bashrc
-echo 'export PS1="\[\e[33m\]ubuntu-vm\[\e[m\]@\[\e[32m\]$IP\[\e[m\]:[\[\e[36m\]\w\[\e[m\]]: " ' >>~/.bashrc
-echo 'alias l="ls -la --color=auto --human-readable --time-style=long-iso --group-directories-first"' >>~/.bashrc
+cd /home/ubuntu/
+echo 'IP=$(ip addr show dev eth0 | grep -oP "(?<=inet ).*(?=/)")' >> .bashrc
+echo 'export PS1="\[\e[33m\]ubuntu-vm\[\e[m\]@\[\e[32m\]$IP\[\e[m\]:[\[\e[36m\]\w\[\e[m\]]: " ' >> .bashrc
+echo 'alias l="ls -la --color=auto --human-readable --time-style=long-iso --group-directories-first"' >> .bashrc
 sudo sysctl -w vm.max_map_count=262144
 echo "vm.max_map_count=262144" | sudo tee -a /etc/sysctl.conf
 
