@@ -21,7 +21,7 @@ cd f5-waf-elk-dashboards
 sudo docker-compose -f docker-compose.yaml up -d
 sleep 30
 
-KIBANA_URL=https://localhost:5601
+KIBANA_URL=http://127.0.0.1:5601
 jq -s . kibana/overview-dashboard.ndjson | jq '{"objects": . }' | \
 curl -k --location --request POST "$KIBANA_URL/api/kibana/dashboards/import" \
     --header 'kbn-xsrf: true' \
