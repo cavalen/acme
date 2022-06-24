@@ -1,0 +1,29 @@
+runtime_parameters: []
+bigip_ready_enabled:
+  - name: change_setting
+    type: inline
+    commands:
+      - tmsh modify sys db ui.system.preferences.recordsperscreen value 100
+      - tmsh modify sys httpd auth-pam-idle-timeout 12000
+      - tmsh modify sys db ui.advisory.enabled value "true"
+      - tmsh modify sys db ui.advisory.text value "Azure - bigip01.example.com"
+      - tmsh create auth partition cis
+controls:
+  logLevel: silly
+  logFilename: /var/log/cloud/bigIpRuntimeInit.log
+extension_packages:
+    install_operations:
+        - extensionType: do
+          extensionVersion: 1.30.0
+        - extensionType: as3
+          extensionVersion: 3.37.0
+        - extensionType: ts
+          extensionVersion: 1.29.0
+extension_services:
+    service_operations:
+    - extensionType: do
+      type: url
+      value: https://raw.githubusercontent.com/cavalen/vlab-azure-tf/master/files/do.json
+    - extensionType: as3
+      type: url
+      value: https://raw.githubusercontent.com/cavalen/vlab-azure-tf/master/files/as3.json
