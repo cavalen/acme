@@ -183,3 +183,4 @@ zstyle :bracketed-paste-magic paste-finish pastefinish
 source ~/.kubectl-completion.zsh
 sudo sysctl -p &> /dev/null
 sudo chmod u+s $(which ping) &> /dev/null
+PROMPT_EOL_MARK=''
