@@ -9,7 +9,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/.local/bin:/usr/local/bin:$PATH
+export PATH=$HOME/.local/bin:/usr/local/bin:/home/carlos/node_modules/.bin:$PATH:/home/carlos/git/kic-k8s-cv/istio/istio-1.14.3/bin
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/carlos/.oh-my-zsh"
@@ -141,10 +141,8 @@ alias mv='mv -i'
 alias df='df -h'                          # human-readable sizes
 alias free='free -m'                      # show sizes in MB
 alias more=less
-alias ll='ls -la --color=auto --human-readable --time-style=long-iso --group-directories-first "$@" --icons'
+alias ll='ls -la --color=auto --human-readable --time-style=long-iso --group-directories-first "$@"'
 alias l='exa -al --color=always --group-directories-first --time-style=long-iso --icons'
-#alias pip='pip3'
-#alias python='python3'
 alias cat='bat -pp'
 alias less='bat --pager=less'
 alias more='bat --pager=less'
@@ -159,6 +157,7 @@ alias tb="nc termbin.com 9999"
 eval $(thefuck --alias)
 unsetopt BEEP
 export KUBE_EDITOR="vim"
+alias nano=vim
 
 TIEMPO_INICIO() {
    tiempoinicio=$(date +%s)
@@ -180,7 +179,11 @@ pastefinish() {
 zstyle :bracketed-paste-magic paste-init pasteinit
 zstyle :bracketed-paste-magic paste-finish pastefinish
 ### Fix slowness of pastes
-source ~/.kubectl-completion.zsh
+
+alias kubectl=kubecolor
+source <(kubectl completion zsh)
+compdef kubecolor=kubectl
+
 sudo sysctl -p &> /dev/null
-sudo chmod u+s $(which ping) &> /dev/null
+sudo chmod u+s $( which ping ) &> /dev/null
 PROMPT_EOL_MARK=''
