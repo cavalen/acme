@@ -9,7 +9,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/.local/bin:/usr/local/bin:/home/carlos/node_modules/.bin:$PATH:/home/carlos/git/kic-k8s-cv/istio/istio-1.14.3/bin
+export PATH=$PATH:$HOME/.local/bin:/usr/local/bin:$HOME/node_modules/.bin:/home/linuxbrew/.linuxbrew/bin
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/carlos/.oh-my-zsh"
@@ -158,6 +158,7 @@ eval $(thefuck --alias)
 unsetopt BEEP
 export KUBE_EDITOR="vim"
 alias nano=vim
+alias keys='NC="\033[0m"; RED="\033[0;31m"; echo " Split Down \t-> ${RED}Alt Shift -${NC} \n Split Right \t-> ${RED}Alt Shift +${NC} \n Resize Panel \t-> ${RED}Alt Shift Arrow${NC} \n Command List \t-> ${RED}Ctrl Shift P${NC}"'
 
 TIEMPO_INICIO() {
    tiempoinicio=$(date +%s)
