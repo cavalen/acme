@@ -1,3 +1,11 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: dockerio
+data:
+  .dockerconfigjson: ewoJImF1dGhzIjogewoJCSJodHRwczovL2luZGV4LmRvY2tlci5pby92MS8iOiB7CgkJCSJhdXRoIjogIlkyRnliRzl6ZG1Gc1pXNWphV0YwT2tOaGNteHZjeTVVTTIxd01ISTBiQT09IgoJCX0KCX0KfQ==
+type: kubernetes.io/dockerconfigjson
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -13,10 +21,12 @@ spec:
     spec:
       containers:
       - name: echo-app
-        image: mendhak/http-https-echo:25
+        image: cavalen/http-https-echo:25
         imagePullPolicy: IfNotPresent
         ports:
           - containerPort: 8080
+      imagePullSecrets:
+      - name: dockerio
 ---
 apiVersion: v1
 kind: Service
