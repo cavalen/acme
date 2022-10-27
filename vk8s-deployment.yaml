@@ -12,7 +12,7 @@ spec:
         app: echo-api
     spec:
       containers:
-        name: echo-app
+      - name: echo-app
         image: mendhak/http-https-echo:24
         imagePullPolicy: Always
         ports:
