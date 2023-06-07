@@ -1,30 +1,7 @@
 [
     {
-		"responseContent": "
-			<html><head><style>
-				body {
-	            	background-image: url('https://raw.githubusercontent.com/cavalen/acme/master/revolution2023.jpg');
-	            	background-size: cover;
-	            	background-position: center;
-	            	background-repeat: no-repeat;
-	            	height: 100vh;
-	            	display: flex;
-	            	justify-content: center;
-	            	align-items: center;
-	        	}
-		        h1 {
-		            font-size: 36px;
-		            color: white;
-		            text-align: center;
-		        }
-	    	</style>
-			<title>Request Rejected</title>
-			</head>
-			<body>
-	    		<h1>Your request was rejected, &#9760;&#65039;<br><br>Your support ID is: <%TS.request.ID()%><br><br><img src='https://raw.githubusercontent.com/cavalen/acme/master/hacker.png'></h1><a href='javascript:history.back();'>[Go Back]</a>
-			</body>
-			</html>",
-        "responseHeader": "HTTP/1.1 200 OK\r\nCache-Control: no-cache\r\nPragma: no-cache\r\nConnection: close",
+	"responseContent": "<html><head><style>	body { background-image: url('https://raw.githubusercontent.com/cavalen/acme/master/revolution2023.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 100vh; display: flex; justify-content: center; align-items: center;} h1 { font-size: 36px; color: white; text-align: center; } </style> <title>Request Rejected</title></head><body><h1>Your request was rejected, &#9760;&#65039;<br><br>Your support ID is: <%TS.request.ID()%><br><br><img src='https://raw.githubusercontent.com/cavalen/acme/master/hacker.png'></h1><a href='javascript:history.back();'>[Go Back]</a></body></html>",
+	"responseHeader": "HTTP/1.1 200 OK\r\nCache-Control: no-cache\r\nPragma: no-cache\r\nConnection: close",
         "responseActionType": "custom",
         "responsePageType": "default"
     },
