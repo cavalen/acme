@@ -3,10 +3,17 @@ bigip_ready_enabled:
   - name: change_setting
     type: inline
     commands:
+      - /usr/bin/setdb provision.extramb 1000 || true
+      - /usr/bin/setdb restjavad.useextramb true || true
+      - /usr/bin/setdb iapplxrpm.timeout 300 || true
+      - /usr/bin/setdb icrd.timeout 180 || true
+      - /usr/bin/setdb restjavad.timeout 180 || true
+      - /usr/bin/setdb restnoded.timeout 180 || true
       - tmsh modify sys db ui.system.preferences.recordsperscreen value 100
       - tmsh modify sys httpd auth-pam-idle-timeout 12000
       - tmsh modify sys db ui.advisory.enabled value "true"
       - tmsh modify sys db ui.advisory.text value "Azure - bigip01.example.com"
+      - tmsh create auth partition cis
 controls:
   logLevel: silly
   logFilename: /var/log/cloud/bigIpRuntimeInit.log
