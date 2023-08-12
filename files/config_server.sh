@@ -2,11 +2,15 @@
 
 # Customization
 cd /home/ubuntu/
-echo 'IP=$(ip addr show dev eth0 | grep -oP "(?<=inet ).*(?=/)")' >> .bashrc
-echo 'export PS1="\[\e[33m\]ubuntu-vm\[\e[m\]@\[\e[32m\]$IP\[\e[m\]:[\[\e[36m\]\w\[\e[m\]]: " ' >> .bashrc
+echo "IP=\$(ip route get 1 | awk '{print \$(NF-2);exit}')" >> ~/.bashrc
+echo 'export PS1="\[\e[0m\]\u\[\e[33m\]@\[\e[32m\]\H\[\e[32m\]($IP)\[\e[0m\]:\[\e[0m\][\[\e[0;96m\]\w\[\e[0m\]] \[\e[0m\]" ' >> ~/.bashrc
+#echo 'export PS1="\[\e[33m\]ubuntu-vm\[\e[m\]@\[\e[32m\]$IP\[\e[m\]:[\[\e[36m\]\w\[\e[m\]]: " ' >> .bashrc
 echo 'alias l="ls -la --color=auto --human-readable --time-style=long-iso --group-directories-first"' >> .bashrc
+echo 'alias sudo="sudo " ' >> ~/.bashrc
 sudo sysctl -w vm.max_map_count=262144
 echo "vm.max_map_count=262144" | sudo tee -a /etc/sysctl.conf
+echo "set bell-style none" | sudo tee -a /etc/inputrc
+sudo timedatectl set-timezone America/Bogota
 
 # Install Docker
 sudo apt update -y
