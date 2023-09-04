@@ -73,7 +73,7 @@
     },
     "/delay/{n}": {
       "get": {
-        "summary": "Delays responding for min(n, 10) seconds.",
+        "summary": "Delays responding for min(n, 5) seconds.",
         "parameters": [
           {
             "name": "n",
@@ -83,7 +83,7 @@
             "style": "simple",
             "explode": false,
             "schema": {
-              "maximum": 10,
+              "maximum": 5,
               "minimum": 0,
               "type": "integer"
             }
