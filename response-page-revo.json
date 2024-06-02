@@ -1,10 +1,10 @@
 [
     {
-      "responseContent": "<html><head><style> body { background-image: url('https://raw.githubusercontent.com/cavalen/acme/master/revolution2024-1.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 100vh; display: flex; justify-content: center; align-items: center;} h1 { font-size: 36px; color: white; text-align: center; } </style> <title>Request Rejected</title></head><body><h1>Your request was rejected, &#9760;&#65039;<br><br>Your support ID is: <%TS.request.ID()%><br><br><img src='https://raw.githubusercontent.com/cavalen/acme/master/hacker.png'></h1><a href='javascript:history.back();'>[Go Back]</a></body></html>",
+      "responseContent": "<html><head><title>Request Rejected</title></head><body><img src='https://raw.githubusercontent.com/cavalen/acme/master/revolution2024-1.jpg' style='display: block; margin-left: auto; margin-right: auto;' /></p><h3 style='text-align: center;'>Your request was rejected &#9760;&#65039; Please contact your administrator</h3><h3 style='text-align: center;'>Your support ID is: <span style='color: #ff0000;'><%TS.request.ID()>;</span></h3><p></p><a href='javascript:history.back();'>[Go Back]</a></body></html>",      
       "responseHeader": "HTTP/1.1 200 OK\r\nCache-Control: no-cache\r\nPragma: no-cache\r\nConnection: close",
       "responseActionType": "custom",
       "responsePageType": "default"
-    },
+    }, 
     {
       "responsePageType": "ajax",
       "ajaxEnabled": true,
