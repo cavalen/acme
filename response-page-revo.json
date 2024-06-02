@@ -1,6 +1,6 @@
 [
     {      
-      "responseContent": "<html><head><title>Request Rejected</title></head><body><h2 style='text-align: center;'><span style='font-size:20px;'><span style='font-family:verdana,geneva,sans-serif;'><img src='https://raw.githubusercontent.com/cavalen/acme/master/revolution2024-1.jpg'><br>Your request was rejected &#9760;&#65039 .. Please contact your administrator<br><br>Your Support ID is <span style='color: rgb(255, 0, 0);'><%TS.request.ID()%></span><br><br><a href='javascript:history.back();'>[Go Back]</a></span></span></h2></body>",
+      "responseContent": "<html><head><title>Request Rejected</title></head><body><h2 style='text-align: center;'><span style='font-size:20px;'><span style='font-family:verdana,geneva,sans-serif;'><img src='https://raw.githubusercontent.com/cavalen/acme/master/revolution2024-1.jpg'><br><br>Your request was rejected &#9760;&#65039 .. Please contact your administrator<br><br>Your Support ID is <span style='color: rgb(255, 0, 0);'><%TS.request.ID()%></span><br><br><a href='javascript:history.back();'>[Go Back]</a></span></span></h2></body>",
       "responseHeader": "HTTP/1.1 200 OK\r\nCache-Control: no-cache\r\nPragma: no-cache\r\nConnection: close",
       "responseActionType": "custom",
       "responsePageType": "default"
