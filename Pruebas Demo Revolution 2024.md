@@ -20,7 +20,7 @@
 - Abrir la consola de Openshift: **https://console-openshift-console.apps.jp0tvppu.eastus2.aroapp.io/**
     | Username | Password             |
     |----------|----------------------|
-    | kubeadmin   | 6KK5V-IEni7-VHo8d-eLRvV |
+    | kubeadmin   | xxxxxxxxxxxxx |
 - Mostrar la configuracion de Routes (Network > Routes > NS Brewz)
 - Abrir Route: **http://route-brewz-brewz.apps.jp0tvppu.eastus2.aroapp.io**
 - Simular fallo al pod de SPA: 
