@@ -3,7 +3,7 @@ kind: Secret
 metadata:
   name: dockerio
 data:
-  .dockerconfigjson: ewoJImF1dGhzIjogewoJCSJodHRwczovL2luZGV4LmRvY2tlci5pby92MS8iOiB7CgkJCSJhdXRoIjogIlkyRnliRzl6ZG1Gc1pXNWphV0YwT2tOaGNteHZjeTVVTTIxd01ISTBiQT09IgoJCX0KCX0KfQ==
+  .dockerconfigjson: easasdalksjdlkajjogewoxcxfgddgfduytiutiuhopijpoasdkajdjasjdlas==
 type: kubernetes.io/dockerconfigjson
 ---
 apiVersion: apps/v1
