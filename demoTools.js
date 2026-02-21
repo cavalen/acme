@@ -1,3 +1,6 @@
+//Crear un bookmark con este link:
+//javascript:(function(src){var%20script%20=%20document.createElement("script");script.setAttribute("src",%20src);document.body.appendChild(script);})("https://github.com/cavalen/acme/demoTools.js")
+
 var doc = document;
 function init(jQuery) {
 
